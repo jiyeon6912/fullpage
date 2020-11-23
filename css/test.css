@@ -33,11 +33,11 @@ section {
 }
 
 .info {
-  width: 50%; /*반응형*/
+  width: 50%;
 }
 
 .photo {
-  width: 40%; /*반응형*/
+  width: 40%;
 }
 
 /* 헤더, 메뉴, 검색창 */
@@ -63,7 +63,7 @@ section {
 .nav {
   position: fixed;
   top: 0;
-  left: -330px; /*nav 메뉴 처음에는 보이지 않음. nav너비만큼 화면왼쪽으로 보냄.*/
+  left: -330px;
   width: 300px;
   height: 100vh;
   background: var(--dark);
@@ -72,11 +72,10 @@ section {
   align-items: center;
   justify-content: center;
   transition: left 0.3s;
-  z-index: 1;
 }
 
 .nav.active {
-  left: 0; /*nav active 실행되면 보임*/
+  left: 0;
 }
 
 .nav li {
@@ -91,21 +90,13 @@ section {
   font-size: 30px;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  transition: padding 0.3s;
-}
-
-.nav a.active {
-  color: #fff;
-  padding-left: 30px;
 }
 
 .search_area {
   position: fixed;
   top: -100px;
-  left: 50%; /*search_area의 너비가 줄어들면서 위치가 변경되었으므로 위치를 재조정함.*/
-  transform: translateX(-50%);
-  /* width: 100%->40%로 변경. 이유?search-area가 전체 block영역을 차지함으로 양쪽 bars와 search버튼이 클릭되지 않음.그래서 너비를 줄임.*/
-  width: 40%;
+  left: 0;
+  width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -120,10 +111,10 @@ section {
 }
 
 .search_area form {
-  /* width: 40%; */
-  width: 100%; /*search_area의 너비가 40%로 줄었기 때문에 form박스의 너비가 작아지므로 전체 너비를 사용하기위해서 40%->100%로 변경함.*/
+  width: 40%;
   margin: 0 auto;
   position: relative;
+  background: red;
 }
 
 .search_area input {
@@ -160,16 +151,9 @@ section {
   width: 80%;
   line-height: 1.2;
 }
-
 .info .line {
   height: 3px;
   background: var(--accent);
-  /* width: 50%; 화면이스크롤될때(inleave, afterload) line이 active되도록 하기위해서 0->50%*/
-  width: 0;
-  transition: width 0.3s;
-}
-
-.info .line.active {
   width: 50%;
 }
 
@@ -179,18 +163,18 @@ section {
   line-height: 1.4;
 }
 
-.info .contact {
+.info .contect {
   display: flex;
 }
 
-.info .contact a {
+.info .contect a {
   display: flex;
   align-items: center;
   margin-right: 30px;
   letter-spacing: 2px;
 }
 
-.info .contact i {
+.info .contect i {
   font-size: 26px;
   color: var(--light);
   margin-right: 10px;
@@ -199,9 +183,4 @@ section {
 .photo {
   border-radius: 12px;
   overflow: hidden;
-}
-
-#fp-nav ul li a span {
-  /*fullpage 기본 네비게이션 버튼의 모양과 색상변경 가능*/
-  background: var(--accent);
 }
